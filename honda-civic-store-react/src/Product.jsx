@@ -1,16 +1,11 @@
-function Product(props) {
-  if(!props.products){
-    return false;
-  }
+function Product({ products = [] }) {
   return (
-    <div>
-      <h4>Products</h4>
-      <div>
-        <p>{props.products[0].productName}</p>
-        <p>{props.products[0].price}</p>
-        <p>{props.products[0].description}</p>
-      </div>
-    </div>
+    <>
+      <h1>A Honda Civic</h1>
+      {products.map((product, index) => (
+        <li key={index}>{product.productName}</li>
+      ))}
+    </>
   );
 }
 export default Product;
